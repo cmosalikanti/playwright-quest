@@ -1,15 +1,43 @@
 ## Installing Playwright
+```
 npm init playwright@latest
+```
 
-## Running the Tests
+## Command line - running the Tests
+
+Run all the tests
+```
 npx playwright test
+```
 
-## To open last HTML report run:
-npx playwright show-report
+Run a single test file
+```
+npx playwright test tests/add-todo.spec.ts
+```
 
-## Running the tests in UI Mode (for a better developer experience with time travel debugging, watch mode)
+Run tests in interactive UI mode, with a built-in watch mode (Preview)
+```
 npx playwright test --ui
+```
 
+Run tests in headed browsers
+```
+npx playwright test --headed
+```
+
+Run all the tests against a specific project
+```
+npx playwright test --project=chromium
+```
+
+To open last HTML report run:
+```
+npx playwright show-report
+```
+
+## Sample apps for testing:
+https://demo.playwright.dev/todomvc/#/
+https://www.saucedemo.com/
 
 ## PlayWright features in VS Code:
 
