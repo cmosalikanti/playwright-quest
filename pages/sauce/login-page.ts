@@ -1,4 +1,4 @@
-import type { Page, Locator } from '@playwright/test';
+import { Page, Locator, expect } from '@playwright/test';
 
 export class LoginPage {
     private userName: Locator;
@@ -32,5 +32,9 @@ export class LoginPage {
 
     async login() {
         await this.loginButton.click();
+    }
+
+    async loginErrorIsDisplayed() {
+        await expect(this.errorMessageContainer).toBeVisible();
     }
 }
