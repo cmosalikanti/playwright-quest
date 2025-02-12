@@ -2,7 +2,7 @@ import type { Page, Locator } from '@playwright/test';
 
 export class ShoppingPage {
     private page: Page;
-    private shoppingCardIcon: Locator;
+    shoppingCardIcon: Locator;
 
     public constructor(page: Page) {
         this.page = page;

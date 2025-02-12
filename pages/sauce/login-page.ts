@@ -7,7 +7,7 @@ export class LoginPage {
     private passwordsContainer: Locator;
     private loginButton: Locator;
     private page: Page;
-    private errorMessageContainer: Locator;
+    errorMessageContainer: Locator;
 
     constructor(page: Page) {
         this.page = page;
@@ -32,9 +32,5 @@ export class LoginPage {
 
     async login() {
         await this.loginButton.click();
-    }
-
-    async loginErrorIsDisplayed() {
-        await expect(this.errorMessageContainer).toBeVisible();
     }
 }

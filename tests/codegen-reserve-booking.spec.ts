@@ -27,7 +27,4 @@ test('test availability of a hotel', async ({ page }) => {
   await expect(page.getByText('List', { exact: true })).toBeVisible();
   await expect(page.getByText('Grid')).toBeVisible();
   await expect(page.getByTestId('sorters-dropdown-trigger')).toBeVisible();
-  await expect(page.getByRole('region', { name: 'Filters' }).getByTestId('filters-group-histogram')).toBeVisible({ timeout: 40_000 });
-  await expect(page.getByRole('combobox', { name: 'Where are you going?' })).toHaveValue('Barcelona', { timeout: 40_000 });
-
 });

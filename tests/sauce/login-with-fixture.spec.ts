@@ -26,6 +26,6 @@ test.describe('Login tests', () => {
     await loginPage.enter('standard_use', 'secret_sauce');
     await loginPage.login();
 
-    await loginPage.loginErrorIsDisplayed();
+    await expect(loginPage.errorMessageContainer).toBeVisible();
 });
 });
