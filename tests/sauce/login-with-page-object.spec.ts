@@ -10,7 +10,7 @@ test.describe('Login tests', () => {
     await loginPage.goto();
     await expect(loginPage.loginCredentialsContainer).toBeVisible();
     await expect(loginPage.passwordsContainer).toBeVisible();
-});
+  });
 
   test('test successful login', async ({ page }) => {
     await loginPage.enter('standard_user', 'secret_sauce');
@@ -25,5 +25,5 @@ test.describe('Login tests', () => {
     await loginPage.login();
 
     await expect(loginPage.errorMessageContainer).toBeVisible();
-});
+  });
 });

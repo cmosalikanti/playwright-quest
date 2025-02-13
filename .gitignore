@@ -7,3 +7,5 @@ node_modules/
 /playwright/.cache/
 
 .DS_Store
+
+playwright/.auth

@@ -37,9 +37,13 @@ export default defineConfig({
 
   /* Configure projects for major browsers */
   projects: [
+        // Setup a project to save the authenticated state of a sauce user.
+    { name: 'setup', testMatch: /.*\.setup\.ts/ },
+
     {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
+      dependencies: ['setup'],
     },
 
     // {
