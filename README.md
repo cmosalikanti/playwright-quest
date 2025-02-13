@@ -1,7 +1,14 @@
-## Installing Playwright
+## About
+
+This project aims to explore the various features available in PlayWright (https://playwright.dev/) with different kind of tests.
+
+##  How to set-up the project
+1. Clone the project
+2. Run the below to install the node dependencies
 ```
-npm init playwright@latest
+npm install
 ```
+3. Run the tests with the below command line.
 
 ## Command line - running the Tests
 
@@ -37,6 +44,7 @@ npx playwright show-report
 
 ## Sample apps for testing:
 https://demo.playwright.dev/todomvc/#/
+
 https://www.saucedemo.com/
 
 ## PlayWright features in VS Code:
