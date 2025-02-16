@@ -1,4 +1,4 @@
-import { test, expect } from '../../fixtures/sauce-fixture';
+import { test, expect } from '../../../fixtures/sauce-fixture';
 
 test.describe('Login tests', () => {
   test('test successful login', async ({ loginPage, shoppingPage }) => {

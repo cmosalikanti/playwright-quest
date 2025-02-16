@@ -1,6 +1,6 @@
 import { test as base, expect } from '@playwright/test';
-import { LoginPage } from '../../pages/sauce/login-page';
-const { ShoppingPage} = require('../../pages/sauce/shopping-page');
+import { LoginPage } from '../../../pages/sauce/login-page';
+const { ShoppingPage} = require('../../../pages/sauce/shopping-page');
 
 // Extend basic test by providing a "loginPage" fixture.
 const test = base.extend<{ loginPage: LoginPage }>({
