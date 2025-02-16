@@ -37,10 +37,36 @@ Run all the tests against a specific project
 npx playwright test --project=chromium
 ```
 
-To open last HTML report run:
+## Built-in Reporters
+#### List reporter
+```
+npx playwright test --reporter=list
+```
+
+#### Line reporter
+More concise than the list reporter. Uses a single line to report last finished test, and prints failures when they occur.
+```
+npx playwright test --reporter=line
+```
+
+#### Dot reporter
+Very concise - it only produces a single character per successful test run.
+```
+npx playwright test --reporter=dot
+```
+
+#### HTML reporter
+Produces a self-contained folder that contains report for the test run that can be served as a web page.
+```
+npx playwright test --reporter=html
+```
+
+A quick way of opening the last test run report is:
 ```
 npx playwright show-report
 ```
+
+More configuration with reporters at: https://playwright.dev/docs/test-reporters
 
 ## Sample apps for testing:
 https://demo.playwright.dev/todomvc/#/
