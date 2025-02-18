@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test('shouldn not the call the api as the request is mocked.', async({ page }) => {
+test('should not the call the actual api but return a mock response.', async({ page }) => {
     // Mock the api call before navigating
     await page.route('**/api/users/2', async route => {
         const json = [{ "name": "John Doe" }];
@@ -14,7 +14,7 @@ test('shouldn not the call the api as the request is mocked.', async({ page }) =
     await expect(page.getByText('John Doe')).toBeVisible();
 });
 
-test('should get the json from response and updates part of it.', async({ page }) => {
+test('should get the json from actual response and modify a part of it via mock', async({ page }) => {
     await page.route('**/api/users/2', async route => {
         const response = await route.fetch();
         const json = await response.json();
