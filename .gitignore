@@ -9,3 +9,7 @@ node_modules/
 .DS_Store
 
 playwright/.auth
+
+# directories created after test run with allure (for reporting)
+allure-results/
+allure-report/

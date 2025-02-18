@@ -66,6 +66,27 @@ A quick way of opening the last test run report is:
 npx playwright show-report
 ```
 
+## Allure reporter
+1. Allure reporter is configured for this project. Please see the below in playwright.config.ts
+```
+reporter: [['list', { printSteps: true }], ["allure-playwright"]],
+```
+2. Install Allure report for Node.js as below:
+```
+npm install -g allure-commandline
+```
+3. Run the tests as below:
+```
+npx playwright test --reporter=line,allure-playwright
+```
+4. The above command will generate 'allure-results' directory with all the files ready to generate the report. Now, let's generate the report with:
+```
+allure generate ./allure-results -o ./allure-report
+```
+5. Open the generated report:
+```
+allure open ./allure-report
+```
 More configuration with reporters at: https://playwright.dev/docs/test-reporters
 
 ## Sample apps for testing:
