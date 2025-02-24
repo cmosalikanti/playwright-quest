@@ -16,8 +16,14 @@ test('test availability of a hotel', async ({ page }) => {
   await page.locator('div').filter({ hasText: /^0$/ }).locator('button').nth(1).click();
   await page.getByTestId('kids-ages-select').getByRole('combobox').selectOption('9');
 
-  // accept the cookies
-  await page.getByRole('button', { name: 'Accept' }).click();
+  // accept the cookies, if present
+  const cookieAcceptButton = await page.getByRole('button', { name: 'Accept' })
+
+  if (await cookieAcceptButton.count() > 0) {
+    await cookieAcceptButton.click();
+  } else {
+    console.log('"Accept" cookies button is not present.');
+  }
 
   //  perform the search
   await page.getByRole('button', { name: 'Search' }).click();
