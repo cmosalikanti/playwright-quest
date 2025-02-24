@@ -27,7 +27,12 @@ jobs:
         run: |
           npm install
 
-      # Step 4: Run the Playwright tests
+      # Step 4: Install Playwright and its dependencies
+      - name: Install Playwright browsers
+        run: |
+          npx playwright install
+
+      # Step 5: Run the Playwright tests
       - name: Run Playwright tests
         run: |
           npx playwright test --reporter=list
