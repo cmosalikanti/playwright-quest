@@ -40,7 +40,7 @@ jobs:
       # Step 6: Generate Allure report
       - name: Generate Allure report
         run: |
-          npm run allure:repo          
+          allure generate ./allure-results -o ./allure-report
 
       # Step 7: Upload Allure results as an artifact
       - name: Upload Allure results
