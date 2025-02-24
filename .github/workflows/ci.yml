@@ -33,23 +33,28 @@ jobs:
           npx playwright install
 
       # Step 5: Run the Playwright tests
-      - name: Run Playwright tests
+      - name: Run Playwright tests with list and allure-playwright as reporters
         run: |
           npx playwright test --reporter=list,allure-playwright
 
-      # Step 6: Generate Allure report
+      # Step 6: Install allure command line
+      - name: Install Allure command line
+        run: |
+          npm install -g allure-commandline --save-dev          
+
+      # Step 7: Generate Allure report
       - name: Generate Allure report
         run: |
           allure generate ./allure-results -o ./allure-report
 
-      # Step 7: Upload Allure results as an artifact
+      # Step 8: Upload Allure results as an artifact
       - name: Upload Allure results
         uses: actions/upload-artifact@v4
         with:
           name: allure-results
           path: allure-results/          
 
-      # Step 8: Optionally upload the generated Allure report as an artifact
+      # Step 9: Optionally upload the generated Allure report as an artifact
       - name: Upload Allure report
         uses: actions/upload-artifact@v4
         with:
